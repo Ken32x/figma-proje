@@ -1,26 +1,181 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;                      /* Sayfanın dış kenar boşluklarını sıfırlar (varsayılan boşlukları kaldırır) */
+  font-family: 'Arial', sans-serif;  /* Tüm sayfa için yazı tipi Arial olur, Arial yoksa sans-serif bir yazı kullanılır */
+  background-color: #ffffff;      /* Sayfanın arka planını beyaz yapar */
+  color: #000000;                 /* Tüm metinleri siyah yapar */
+}
+
+a {
+  text-decoration: none;          /* Bağlantıların (anchor tag) altı çizilmez */
+  color: inherit;                 /* Bağlantıların rengi, bulunduğu yerin metin rengiyle aynı olur (kalıtım) */
+}
+
+button {
+  font-family: inherit;           /* Butonlar, bulunduğu yerin yazı tipi stilini alır */
+}
+
+/* Sponsor alanı */
+
+.sponsor-section {
+  margin-top: 70px;               /* Sponsor bölümü ile üstteki içerik arasında 70px boşluk bırakır */
+}
+
+.logo-bar {
+  display: flex;                  /* Logo satırını yatayda hizalar (flexbox) */
+  justify-content: space-between;/* Logolar arasına eşit boşluk bırakır (en sola ve en sağa da yayılır) */
+  align-items: center;           /* Logoların dikeyde ortalanmasını sağlar */
+  padding: 0 80px;               /* Sağ ve soldan 80px boşluk verir */
+  flex-wrap: wrap;               /* Küçük ekranlarda logoların alt alta geçmesini sağlar (responsive yapı) */
+  gap: 20px;                     /* Logolar arasında 20px boşluk bırakır */
+}
+
+.logo-bar img {
+  height: 35px;                  /* Her bir logonun yüksekliği 40 piksel olur */
+  object-fit: contain;           /* Logonun oranını bozmadan kutunun içine sığdırır (gerekirse kenarda boşluk kalır) */
+  opacity: 0.8;                  /* Logolar biraz saydam (soluk) görünür başlangıçta */
+  transition: opacity 0.3s ease;/* Üzerine gelindiğinde opaklık değişimi yumuşak geçişle olur (0.3 saniyede) */
+}
+
+.logo-bar img:hover {
+  opacity: 1;                    /* Mouse ile üzerine gelindiğinde logonun opaklığı tam olur (parlaklaşır) */
+}
+/* Services Kısımı */
+
+
+.services-section {
+  margin-top: 140px; 
+  display: flex;             /* Başlık ve açıklamayı yatayda yan yana dizer */
+  align-items: center;       /* Dikeyde ortalama yapar */
+  padding: 0 80px;           /* Sağdan ve soldan boşluk bırakır */
+  margin-top: 100px;         /* Yukarıdaki bölümden 100px boşluk bırakır */
+  gap: 24px;                 /* Başlık ve açıklama arasında 24px boşluk */
+}
+
+
+.services-title-box {
+  background-color: #C6FF65; /* Arka planı açık yeşil */
+  padding: 8px 16px;         /* İç boşluklar (üst-alt: 8px, sağ-sol: 16px) */
+  border-radius: 8px;        /* Hafif yuvarlatılmış köşeler */
+}
+
+.services-title {
+  font-size: 24px;           /* Başlık yazı boyutu */
+  font-weight: bold;         /* Kalın yazı */
+  color: #000;               /* Siyah renk */
+  margin: 0;                 /* Varsayılan boşlukları kaldırır */
+}
+
+.services-description {
+  font-size: 16px;           /* Paragraf metni boyutu */
+  color: #333;               /* Koyu gri ton */
+  line-height: 1.5;          /* Satır aralığı */
+  max-width: 600px;          /* Maksimum 600px genişlik */
+  margin: 0;                 /* Dış boşlukları sıfırlar */
+}
+
+
+/*ServicesCards*/
+
+.services-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .services-cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+.service-card {
+  width: 600px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+}
+
+/* Arka plan renkleri */
+.gray-bg {
+  background-color: #f7f7f7;
+  color: black;
+}
+
+.green-bg {
+  background-color: #b6ff5c;
+  color: black;
+}
+
+.dark-bg {
+  background-color: #0d0d0d;
+  color: white;
+}
+
+/* Başlık */
+.card-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.card-title {
+  display: inline-block;
+  font-size: 23px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.card-title.white {
+  background: white;
+  color: black;
+}
+
+.card-title.green {
+  background: #b6ff5c;
+  color: black;
+}
+
+/* Resim */
+.service-icon {
+  width: 900;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  margin-top: auto;
+}
+
+/* Learn more */
+.learn-more {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 16px;
+
+}
+
+.arrow-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.arrow-icon:hover {
+  transform: scale(1.2);
+}
+.gray-bg {
+  background-color: #f7f7f7;
+  color: black;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
