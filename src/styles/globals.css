@@ -1,4 +1,5 @@
-body {
+html, body {
+  overflow-x:hidden;
   margin: 0;                      /* Sayfanın dış kenar boşluklarını sıfırlar (varsayılan boşlukları kaldırır) */
   font-family: 'Arial', sans-serif;  /* Tüm sayfa için yazı tipi Arial olur, Arial yoksa sans-serif bir yazı kullanılır */
   background-color: #ffffff;      /* Sayfanın arka planını beyaz yapar */
@@ -48,7 +49,8 @@ button {
   align-items: center;       /* Dikeyde ortalama yapar */
   padding: 0 80px;           /* Sağdan ve soldan boşluk bırakır */
   margin-top: 100px;         /* Yukarıdaki bölümden 100px boşluk bırakır */
-  gap: 24px;                 /* Başlık ve açıklama arasında 24px boşluk */
+  gap: 24px;   
+  margin-left: 145px;              /* Başlık ve açıklama arasında 24px boşluk */
 }
 
 
@@ -66,7 +68,7 @@ button {
 }
 
 .services-description {
-  font-size: 16px;           /* Paragraf metni boyutu */
+  font-size: 18px;           /* Paragraf metni boyutu */
   color: #333;               /* Koyu gri ton */
   line-height: 1.5;          /* Satır aralığı */
   max-width: 600px;          /* Maksimum 600px genişlik */
@@ -82,6 +84,8 @@ button {
   gap: 60px;
   justify-content: center;
   padding: 80px 20px;
+  margin-bottom: 100px;
+
 }
 
 @media (max-width: 768px) {
@@ -92,6 +96,7 @@ button {
 }
 
 .service-card {
+  
   width: 600px;
   height: 310px;
   display: flex;
@@ -100,7 +105,7 @@ button {
   border-radius: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-
+  
 }
 
 /* Arka plan renkleri */
@@ -179,3 +184,245 @@ button {
   color: black;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
+ /* CTA */
+
+.cta-section {
+  background-color: #f5f5f5;
+  padding: 10px 115px;
+  border-radius: 30px;
+  margin: 0 auto 100px auto;
+  max-width: 1200px;
+  margin-bottom: 140px;
+  
+}
+
+.cta-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.cta-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cta-text h2 {
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+.cta-text p {
+  font-size: 23px;
+  margin-bottom: 50px;
+  color: #444;
+}
+
+.cta-button {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.cta-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-image img {
+  max-width: 75%;
+  height: auto;
+  margin-left: 30%;
+}
+
+/* CastleIntro */
+
+.case-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  margin-left: 205px;
+}
+
+.case-title {
+  background-color: #b5ff57; /* senin yeşile en yakın renk */
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.case-description {
+  font-size: 18px;
+  color: #333;
+  max-width: 600px;
+}
+
+/* CaseCards */
+
+.case-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #0f0f15;
+  border-radius: 30px;
+  padding: 60px 60px;
+  gap: 40px;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto 100px auto;
+  margin-left: 220px;
+}
+
+.case-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 193px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-right: 1px solid #444;
+  padding-right: 20px;
+}
+
+.case-card:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.learn-more {
+  color: #b5ff57;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.learn-more span {
+  font-size: 18px;
+  line-height: 1;
+}
+/* Working */
+
+.working-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  margin-left: 205px;
+}
+
+.working-title {
+  background-color: #b5ff57; /* senin yeşile en yakın renk */
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.working-description {
+  font-size: 18px;
+  color: #333;
+  max-width: 600px;
+}
+  /* AccordionItem */
+
+  .accordion-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f2f2f2;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #eee;
+  }
+  
+  .accordion-header.active {
+    background-color: #a4ff6c;
+  }
+  
+  .accordion-title {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .accordion-icon {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background: #fff;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  
+  .accordion-content.open {
+    max-height: 300px;
+    padding: 20px;
+  }
+   /* Team */
+   
+   .services-section {
+    margin-top: 140px; 
+    display: flex;             /* Başlık ve açıklamayı yatayda yan yana dizer */
+    align-items: center;       /* Dikeyde ortalama yapar */
+    padding: 0 80px;           /* Sağdan ve soldan boşluk bırakır */
+    margin-top: 100px;         /* Yukarıdaki bölümden 100px boşluk bırakır */
+    gap: 24px;   
+    margin-left: 145px;              /* Başlık ve açıklama arasında 24px boşluk */
+  }
+  
+  
+  .services-title-box {
+    background-color: #C6FF65; /* Arka planı açık yeşil */
+    padding: 8px 16px;         /* İç boşluklar (üst-alt: 8px, sağ-sol: 16px) */
+    border-radius: 8px;        /* Hafif yuvarlatılmış köşeler */
+  }
+  
+  .services-title {
+    font-size: 24px;           /* Başlık yazı boyutu */
+    font-weight: bold;         /* Kalın yazı */
+    color: #000;               /* Siyah renk */
+    margin: 0;                 /* Varsayılan boşlukları kaldırır */
+  }
+  
+  .services-description {
+    font-size: 18px;           /* Paragraf metni boyutu */
+    color: #333;               /* Koyu gri ton */
+    line-height: 1.5;          /* Satır aralığı */
+    max-width: 600px;          /* Maksimum 600px genişlik */
+    margin: 0; 
+  }
